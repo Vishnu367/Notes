@@ -1,0 +1,6 @@
+
+#notes-container{
+    display: grid;
+    grid-template-columns: 0.55fr 1fr;
+    gap: 12px;
+}

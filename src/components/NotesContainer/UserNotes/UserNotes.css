@@ -1,0 +1,22 @@
+
+#user-notes {
+    min-height: 82vh;
+    max-height: 82.1vh;
+    overflow: scroll;
+    padding: 24px 38px;
+}
+#user-notes-content {
+    font-size: 22px;
+    margin-top: 20px;
+    text-align: justify;
+    word-spacing: 5px;
+    letter-spacing: 1.2px;
+    line-height: 1.7;
+}
+#user-notes-createdAt {
+    background-color: var(--light-purple);
+    padding: 6px 18px;
+    border-radius: 26px;
+    color: white;
+    line-height: 2px;
+}
