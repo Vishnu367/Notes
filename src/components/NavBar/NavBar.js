@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import './NavBar.css'
 import { useSelector, useDispatch } from 'react-redux'
+import { setFilterNotes } from '../../redux/action'
+import { useNavigate } from 'react-router-dom'
+import { notes } from '../../redux/sampleData'
 
 function NavBar() {
 
-  const [navToggles] = useState(['Home','Projects','Work'])
+  const [navToggles, setNavToggles] = useState(['All Notes', 'Notes', 'Check Box', 'Drawings'])
   const [activeIndex, setActiveIndex] = useState(0)
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  const notesData = useSelector((state) => state.notes.notesData)
+  const notesData = useSelector(state => state.notes)
+  // console.log(notesData)
+  const { paths } = notesData
+  const { categoryNotesPath } = paths
 
   return (
     <div>
@@ -21,16 +28,20 @@ function NavBar() {
             <div id='nav-toggles'>
                 {
                   navToggles.map((item,index) => {
-                      return <div 
+                      return <button
                                 key={index}
-                                onClick={() => setActiveIndex(index)}
+                                onClick={() => {
+                                    setActiveIndex(index)
+                                    dispatch(setFilterNotes(item))
+                                    navigate(`${categoryNotesPath}/${item}`)
+                                  }}
                                 className={`btn ${index === activeIndex ? 'btn-primary' : ''}`}
                               >
                                 {item}
-                              </div>
+                              </button>
                   })
                 }
-                <div className='btn btn-large'>+</div>
+                {/* <div className='btn btn-large'>+</div> */}
             </div>
             <div>
                 <button id='nav-menu' className='btn btn-large btn-opp'>

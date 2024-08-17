@@ -1,0 +1,29 @@
+
+#checkbox-content-container{
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+#checked-title-btn {
+    margin: 14px 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+}
+.checked-items-arrow {
+    margin-right: 6px;
+}
+
+.checkbox-input {
+    accent-color: gray;
+}
+.line-through {
+    color: gray;
+    text-decoration: line-through;
+    text-decoration-color: gray;
+}
+
+#checkbox-style-toggle {
+    text-align: end;
+}

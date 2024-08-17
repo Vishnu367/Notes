@@ -1,6 +1,12 @@
 
 #notes-container{
     display: grid;
-    grid-template-columns: 0.55fr 1fr;
+    grid-template-columns: 0.55fr 1fr !important;
     gap: 12px;
+    margin-top: 12px; 
+}
+
+.notes-container-item {
+    box-sizing: border-box;
+    min-width: 0;
 }
